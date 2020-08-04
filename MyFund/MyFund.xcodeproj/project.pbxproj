@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		CD10BF5C24D955FE00536B59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD10BF5A24D955FE00536B59 /* LaunchScreen.storyboard */; };
 		CD10BF6D24D95DE200536B59 /* FundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10BF6C24D95DE200536B59 /* FundViewController.swift */; };
 		CD10BF6F24D95FC800536B59 /* AddRecodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10BF6E24D95FC800536B59 /* AddRecodViewController.swift */; };
+		CD10BF7224D963F900536B59 /* FundTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10BF7124D963F900536B59 /* FundTableViewCell.swift */; };
 		E6C2F96E3C6F5E406EC2154F /* Pods_MyFund.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC2AEF21CDC616D6B8DA6FB /* Pods_MyFund.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		CD10BF5D24D955FE00536B59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD10BF6C24D95DE200536B59 /* FundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundViewController.swift; sourceTree = "<group>"; };
 		CD10BF6E24D95FC800536B59 /* AddRecodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecodViewController.swift; sourceTree = "<group>"; };
+		CD10BF7124D963F900536B59 /* FundTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,8 +150,17 @@
 		CD10BF6B24D95D9500536B59 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CD10BF7024D963D900536B59 /* Cell */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		CD10BF7024D963D900536B59 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CD10BF7124D963F900536B59 /* FundTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		F7C4D0A05053097BA1013B8D /* Frameworks */ = {
@@ -171,6 +182,7 @@
 				CD10BF4824D955FD00536B59 /* Sources */,
 				CD10BF4924D955FD00536B59 /* Frameworks */,
 				CD10BF4A24D955FD00536B59 /* Resources */,
+				BAF6E09B54DEB31DF1EB5605 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -227,6 +239,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		BAF6E09B54DEB31DF1EB5605 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyFund/Pods-MyFund-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyFund/Pods-MyFund-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyFund/Pods-MyFund-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D408B564A8B005D25E3BCB53 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -258,6 +287,7 @@
 			files = (
 				CD10BF6F24D95FC800536B59 /* AddRecodViewController.swift in Sources */,
 				CD10BF6D24D95DE200536B59 /* FundViewController.swift in Sources */,
+				CD10BF7224D963F900536B59 /* FundTableViewCell.swift in Sources */,
 				CD10BF5024D955FD00536B59 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
