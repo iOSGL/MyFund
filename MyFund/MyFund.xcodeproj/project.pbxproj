@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		CD10BF5024D955FD00536B59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10BF4F24D955FD00536B59 /* AppDelegate.swift */; };
-		CD10BF5424D955FD00536B59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10BF5324D955FD00536B59 /* ViewController.swift */; };
 		CD10BF5924D955FE00536B59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD10BF5824D955FE00536B59 /* Assets.xcassets */; };
 		CD10BF5C24D955FE00536B59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD10BF5A24D955FE00536B59 /* LaunchScreen.storyboard */; };
+		CD10BF6D24D95DE200536B59 /* FundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10BF6C24D95DE200536B59 /* FundViewController.swift */; };
+		CD10BF6F24D95FC800536B59 /* AddRecodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10BF6E24D95FC800536B59 /* AddRecodViewController.swift */; };
 		E6C2F96E3C6F5E406EC2154F /* Pods_MyFund.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC2AEF21CDC616D6B8DA6FB /* Pods_MyFund.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,10 +21,11 @@
 		2CC2AEF21CDC616D6B8DA6FB /* Pods_MyFund.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyFund.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD10BF4C24D955FD00536B59 /* MyFund.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFund.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD10BF4F24D955FD00536B59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CD10BF5324D955FD00536B59 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CD10BF5824D955FE00536B59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD10BF5B24D955FE00536B59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD10BF5D24D955FE00536B59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD10BF6C24D95DE200536B59 /* FundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundViewController.swift; sourceTree = "<group>"; };
+		CD10BF6E24D95FC800536B59 /* AddRecodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecodViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +46,6 @@
 				2265B9C3339316D40684A10E /* Pods-MyFund.debug.xcconfig */,
 				26293C4A3BF7BA5CD15A1F2E /* Pods-MyFund.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -69,13 +70,86 @@
 		CD10BF4E24D955FD00536B59 /* MyFund */ = {
 			isa = PBXGroup;
 			children = (
+				CD10BF6624D95BC500536B59 /* Resources */,
+				CD10BF6524D95BAA00536B59 /* GL_Common */,
+				CD10BF6424D95B9D00536B59 /* Function */,
+				CD10BF6324D95B3E00536B59 /* Third */,
 				CD10BF4F24D955FD00536B59 /* AppDelegate.swift */,
-				CD10BF5324D955FD00536B59 /* ViewController.swift */,
 				CD10BF5824D955FE00536B59 /* Assets.xcassets */,
 				CD10BF5A24D955FE00536B59 /* LaunchScreen.storyboard */,
 				CD10BF5D24D955FE00536B59 /* Info.plist */,
 			);
 			path = MyFund;
+			sourceTree = "<group>";
+		};
+		CD10BF6324D95B3E00536B59 /* Third */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
+		CD10BF6424D95B9D00536B59 /* Function */ = {
+			isa = PBXGroup;
+			children = (
+				CD10BF6724D95D4400536B59 /* Main */,
+			);
+			path = Function;
+			sourceTree = "<group>";
+		};
+		CD10BF6524D95BAA00536B59 /* GL_Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GL_Common;
+			sourceTree = "<group>";
+		};
+		CD10BF6624D95BC500536B59 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CD10BF6724D95D4400536B59 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CD10BF6B24D95D9500536B59 /* View */,
+				CD10BF6A24D95D8B00536B59 /* ViewModel */,
+				CD10BF6924D95D8600536B59 /* Model */,
+				CD10BF6824D95D7700536B59 /* Controller */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		CD10BF6824D95D7700536B59 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CD10BF6C24D95DE200536B59 /* FundViewController.swift */,
+				CD10BF6E24D95FC800536B59 /* AddRecodViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CD10BF6924D95D8600536B59 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CD10BF6A24D95D8B00536B59 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CD10BF6B24D95D9500536B59 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F7C4D0A05053097BA1013B8D /* Frameworks */ = {
@@ -182,7 +256,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD10BF5424D955FD00536B59 /* ViewController.swift in Sources */,
+				CD10BF6F24D95FC800536B59 /* AddRecodViewController.swift in Sources */,
+				CD10BF6D24D95DE200536B59 /* FundViewController.swift in Sources */,
 				CD10BF5024D955FD00536B59 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
