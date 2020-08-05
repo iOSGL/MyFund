@@ -126,7 +126,7 @@ class FundSectionHeaderView: UIView {
         
         self.buyDateValue.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.top.equalTo(self.buyDate.snp.bottom).offset(10)
+            make.top.equalTo(self.buyDate.snp.bottom).offset(5)
         }
         
         self.totalAmount.snp.makeConstraints { (make) in
@@ -135,7 +135,7 @@ class FundSectionHeaderView: UIView {
         }
         
         self.totalAmountValue.snp.makeConstraints { (make) in
-            make.top.equalTo(self.totalAmount.snp.bottom).offset(10)
+            make.top.equalTo(self.totalAmount.snp.bottom).offset(5)
             make.right.equalTo(self.totalAmount.snp.right)
         }
         
