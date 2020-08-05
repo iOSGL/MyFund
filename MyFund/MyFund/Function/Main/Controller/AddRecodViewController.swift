@@ -15,12 +15,6 @@ class AddRecodViewController: UIViewController {
     var fundAmountTextFiled: UITextField?
     var stockTextFiled: UITextField?
     
-    var fundNumberText: String?
-    var fundNameText: String?
-    var fundAmountText: String?
-    var stockText: String?
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -49,7 +43,6 @@ class AddRecodViewController: UIViewController {
         self.fundNumberTextFiled?.keyboardType = .numberPad
         self.fundNumberTextFiled?.leftView = plView
         self.fundNumberTextFiled?.leftViewMode = .always
-        self.fundAmountTextFiled?.delegate = self
         self.fundAmountTextFiled?.tag = 1
         self.view.addSubview(self.fundNumberTextFiled!)
        
@@ -81,7 +74,6 @@ class AddRecodViewController: UIViewController {
         self.fundNameTextFiled?.layer.borderColor = UIColor("#999999").cgColor
         self.fundNameTextFiled?.leftView = plView
         self.fundNameTextFiled?.leftViewMode = .always
-        self.fundNameTextFiled?.delegate = self
         self.fundNameTextFiled?.tag = 2
         self.view.addSubview(self.fundNameTextFiled!)
         self.fundNameTextFiled?.snp.makeConstraints({ (make) in
@@ -97,7 +89,6 @@ class AddRecodViewController: UIViewController {
         self.fundAmountTextFiled?.layer.borderColor = UIColor("#999999").cgColor
         self.fundAmountTextFiled?.leftView = plView
         self.fundAmountTextFiled?.leftViewMode = .always
-        self.fundAmountTextFiled?.delegate = self
         self.fundAmountTextFiled?.tag = 3
         self.view.addSubview(self.fundAmountTextFiled!)
         self.fundAmountTextFiled?.snp.makeConstraints({ (make) in
@@ -113,7 +104,6 @@ class AddRecodViewController: UIViewController {
         self.stockTextFiled?.layer.borderColor = UIColor("#999999").cgColor
         self.stockTextFiled?.leftView = plView
         self.stockTextFiled?.leftViewMode = .always
-        self.stockTextFiled?.delegate = self
         self.stockTextFiled?.tag = 4
         self.view.addSubview(self.stockTextFiled!)
         self.stockTextFiled?.snp.makeConstraints({ (make) in
@@ -149,11 +139,6 @@ class AddRecodViewController: UIViewController {
             make.right.equalToSuperview().offset(-15)
             make.height.equalTo(44)
         }
-        
-        self.fundNumberTextFiled?.addTarget(self, action: #selector(textDidChange(_:)), for: .editingChanged)
-        self.fundNameTextFiled?.addTarget(self, action: #selector(textDidChange(_:)), for: .editingChanged)
-        self.fundAmountTextFiled?.addTarget(self, action: #selector(textDidChange(_:)), for: .editingChanged)
-        self.stockTextFiled?.addTarget(self, action: #selector(textDidChange(_:)), for: .editingChanged)
        }
     
     @objc func addComplete() {
@@ -164,7 +149,7 @@ class AddRecodViewController: UIViewController {
     
     @objc func selectFund() {
         let dic = GLDatabaseManager.share().fundDataBase.selectFund(withFundNumber: self.fundNumberTextFiled?.text ?? "1") as? NSDictionary
-        guard dic != nil else {
+        guard dic == nil else {
             return
         }
         self.fundNumberTextFiled?.text = dic?["fund_number"] as? String
@@ -178,7 +163,6 @@ class AddRecodViewController: UIViewController {
     }
     
     @objc func buyFund() {
-        
         if !((self.fundNumberTextFiled?.text!.count)! > 0) {
             self.view.gl_showToast("请输入基金编号")
             return
@@ -204,12 +188,5 @@ class AddRecodViewController: UIViewController {
     
 }
 
-
-
-extension AddRecodViewController: UITextFieldDelegate {
-    @objc func textDidChange(_ textField: UITextField) {
-       
-    }
-}
 
 
