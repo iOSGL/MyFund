@@ -20,9 +20,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)inserActionRecordsWithInfo:(NSDictionary *)info;
 
 /**
- 查询数据
+ 查询单个数据
  */
 - (NSDictionary *)selectFundWithFundNumber:(NSString *)number;
+
+/**
+ 查询全部
+ */
+- (NSMutableArray *)selectAllFund;
 
 /**
  更新数据

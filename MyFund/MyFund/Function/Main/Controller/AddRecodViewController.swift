@@ -153,6 +153,8 @@ class AddRecodViewController: UIViewController {
             self.fundNumberTextFiled?.text = dic["fund_number"] as? String
             self.fundNameTextFiled?.text = (dic["fund_name"] as! String)
             self.stockTextFiled?.text = (dic["stock"] as! String)
+        } else {
+            self.view.gl_showToast("还未购买此基金")
         }
     }
     

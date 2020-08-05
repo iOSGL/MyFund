@@ -12,6 +12,8 @@ import SnapKit
 
 class FundViewController: UIViewController {
     
+    var dataSource: [FundSectionModel]?
+    
     private lazy var tableView: UITableView = {
         let table = UITableView.init(frame: CGRect.zero, style: .plain)
         table.delegate = self
@@ -42,11 +44,12 @@ class FundViewController: UIViewController {
         self.tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-        
     }
     
     func loadData() {
-        
+        let array = GLDatabaseManager.share().fundDataBase.selectAllFund()
+        self.dataSource =  [FundSectionModel].deserialize(from: array) as? [FundSectionModel]
+        self.tableView.reloadData()
     }
     
     
