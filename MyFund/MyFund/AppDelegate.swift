@@ -14,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        GLDatabaseManager.share().dataBase.createReportTable()
+        GLDatabaseManager.share().fundDataBase.createReportTable()
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = UIColor.white
         let nav: UINavigationController = UINavigationController.init(rootViewController: FundViewController())

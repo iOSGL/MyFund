@@ -15,6 +15,10 @@
 		CD10BF7224D963F900536B59 /* FundTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10BF7124D963F900536B59 /* FundTableViewCell.swift */; };
 		CD10BF7524DA468C00536B59 /* FundSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10BF7424DA468C00536B59 /* FundSectionHeaderView.swift */; };
 		CD10BF7724DA4AAF00536B59 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10BF7624DA4AAF00536B59 /* Model.swift */; };
+		CD10BF7C24DA606200536B59 /* Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = CD10BF7B24DA606200536B59 /* Tool.m */; };
+		CD10BF8024DA781300536B59 /* GLDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CD10BF7F24DA781300536B59 /* GLDataBase.m */; };
+		CD10BF8324DA793E00536B59 /* GLDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD10BF8224DA793E00536B59 /* GLDatabaseManager.m */; };
+		CD10BF8624DA7FE800536B59 /* GLFundDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CD10BF8524DA7FE800536B59 /* GLFundDataBase.m */; };
 		E6C2F96E3C6F5E406EC2154F /* Pods_MyFund.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC2AEF21CDC616D6B8DA6FB /* Pods_MyFund.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +36,15 @@
 		CD10BF7124D963F900536B59 /* FundTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundTableViewCell.swift; sourceTree = "<group>"; };
 		CD10BF7424DA468C00536B59 /* FundSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundSectionHeaderView.swift; sourceTree = "<group>"; };
 		CD10BF7624DA4AAF00536B59 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		CD10BF7924DA606200536B59 /* MyFund-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyFund-Bridging-Header.h"; sourceTree = "<group>"; };
+		CD10BF7A24DA606200536B59 /* Tool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tool.h; sourceTree = "<group>"; };
+		CD10BF7B24DA606200536B59 /* Tool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tool.m; sourceTree = "<group>"; };
+		CD10BF7E24DA781300536B59 /* GLDataBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLDataBase.h; sourceTree = "<group>"; };
+		CD10BF7F24DA781300536B59 /* GLDataBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLDataBase.m; sourceTree = "<group>"; };
+		CD10BF8124DA793E00536B59 /* GLDatabaseManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLDatabaseManager.h; sourceTree = "<group>"; };
+		CD10BF8224DA793E00536B59 /* GLDatabaseManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLDatabaseManager.m; sourceTree = "<group>"; };
+		CD10BF8424DA7FE800536B59 /* GLFundDataBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLFundDataBase.h; sourceTree = "<group>"; };
+		CD10BF8524DA7FE800536B59 /* GLFundDataBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLFundDataBase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +94,7 @@
 				CD10BF6424D95B9D00536B59 /* Function */,
 				CD10BF6324D95B3E00536B59 /* Third */,
 				CD10BF4F24D955FD00536B59 /* AppDelegate.swift */,
+				CD10BF7924DA606200536B59 /* MyFund-Bridging-Header.h */,
 				CD10BF5824D955FE00536B59 /* Assets.xcassets */,
 				CD10BF5A24D955FE00536B59 /* LaunchScreen.storyboard */,
 				CD10BF5D24D955FE00536B59 /* Info.plist */,
@@ -106,6 +120,7 @@
 		CD10BF6524D95BAA00536B59 /* GL_Common */ = {
 			isa = PBXGroup;
 			children = (
+				CD10BF7824DA604C00536B59 /* Tool */,
 			);
 			path = GL_Common;
 			sourceTree = "<group>";
@@ -177,6 +192,21 @@
 			path = CustomView;
 			sourceTree = "<group>";
 		};
+		CD10BF7824DA604C00536B59 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				CD10BF7A24DA606200536B59 /* Tool.h */,
+				CD10BF7B24DA606200536B59 /* Tool.m */,
+				CD10BF7E24DA781300536B59 /* GLDataBase.h */,
+				CD10BF7F24DA781300536B59 /* GLDataBase.m */,
+				CD10BF8424DA7FE800536B59 /* GLFundDataBase.h */,
+				CD10BF8524DA7FE800536B59 /* GLFundDataBase.m */,
+				CD10BF8124DA793E00536B59 /* GLDatabaseManager.h */,
+				CD10BF8224DA793E00536B59 /* GLDatabaseManager.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		F7C4D0A05053097BA1013B8D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +249,7 @@
 				TargetAttributes = {
 					CD10BF4B24D955FD00536B59 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
@@ -299,8 +330,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD10BF8324DA793E00536B59 /* GLDatabaseManager.m in Sources */,
 				CD10BF6F24D95FC800536B59 /* AddRecodViewController.swift in Sources */,
+				CD10BF8624DA7FE800536B59 /* GLFundDataBase.m in Sources */,
 				CD10BF7524DA468C00536B59 /* FundSectionHeaderView.swift in Sources */,
+				CD10BF7C24DA606200536B59 /* Tool.m in Sources */,
+				CD10BF8024DA781300536B59 /* GLDataBase.m in Sources */,
 				CD10BF6D24D95DE200536B59 /* FundViewController.swift in Sources */,
 				CD10BF7724DA4AAF00536B59 /* Model.swift in Sources */,
 				CD10BF7224D963F900536B59 /* FundTableViewCell.swift in Sources */,
@@ -441,6 +476,7 @@
 			baseConfigurationReference = 2265B9C3339316D40684A10E /* Pods-MyFund.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8Q4F77XGYH;
 				INFOPLIST_FILE = MyFund/Info.plist;
@@ -451,6 +487,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.LeYuan.Game.XiaoXiaoLe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyFund//MyFund-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -461,6 +499,7 @@
 			baseConfigurationReference = 26293C4A3BF7BA5CD15A1F2E /* Pods-MyFund.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8Q4F77XGYH;
 				INFOPLIST_FILE = MyFund/Info.plist;
@@ -471,6 +510,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.LeYuan.Game.XiaoXiaoLe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyFund//MyFund-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
