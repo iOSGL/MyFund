@@ -17,6 +17,7 @@ struct FundSectionModel: HandyJSON {
     var totalAmount:String?       // 持有金额
     var profit: Float = 0            // 当前收益
     var date:String?               // 购买时间
+    var transactionList: [TransactionList]? // 交易记录
     
 }
 

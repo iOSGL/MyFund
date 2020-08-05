@@ -80,14 +80,14 @@
      [_db inDatabase:^(FMDatabase * _Nonnull db) {
          FMResultSet *set = [db executeQuery:@"select * from Fund"];
          while ([set next]) {
-             NSInteger time =[set intForColumn:@"date"];
+             NSString *time =[set stringForColumn:@"date"];
               NSString *amount = [NSString stringWithFormat:@"%.2f", [set doubleForColumn:@"total_amount"]];
              NSDictionary *dic = @{
                  @"fundNumber": [NSString stringWithFormat:@"%i", [set intForColumn:@"fund_number"]],
                  @"fundName": [set stringForColumn:@"fund_name"],
                  @"fundStock": [set stringForColumn:@"stock"],
                  @"totalAmount": amount,
-                 @"date": [Tool formatHH_MM_SS:time],
+                 @"date": [Tool formatHH_MM_SS:[time integerValue]],
              };
              [array addObject:[dic mutableCopy]];
          }

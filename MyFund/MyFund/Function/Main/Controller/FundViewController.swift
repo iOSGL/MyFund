@@ -58,18 +58,18 @@ class FundViewController: UIViewController {
         let nav = UINavigationController.init(rootViewController: control)
         self.present(nav, animated: true, completion: nil)
     }
-
 }
 
 
 extension FundViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return self.dataSource?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        let model: FundSectionModel = (self.dataSource?[section])!
+        return model.transactionList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -78,7 +78,9 @@ extension FundViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let model: FundSectionModel = (self.dataSource?[section])!
         let view = FundSectionHeaderView.init()
+        view.loadData(model)
         return view
     }
     

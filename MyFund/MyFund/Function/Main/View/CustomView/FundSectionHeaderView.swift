@@ -23,7 +23,6 @@ class FundSectionHeaderView: UIView {
               let lable = UILabel.init()
               lable.font = UIFont.systemFont(ofSize: 12)
                lable.textColor = UIColor("#666666")
-              lable.text = "富国军工"
            lable.textAlignment = .left
               return lable
           }()
@@ -32,7 +31,6 @@ class FundSectionHeaderView: UIView {
               let lable = UILabel.init()
               lable.font = UIFont.systemFont(ofSize: 12)
                lable.textColor = UIColor("#7c003b")
-              lable.text = "000601"
         lable.textAlignment = .center
               return lable
         }()
@@ -50,7 +48,6 @@ class FundSectionHeaderView: UIView {
           let lable = UILabel.init()
           lable.font = UIFont.systemFont(ofSize: 12)
            lable.textColor = UIColor("#666666")
-          lable.text = "2020-08-04"
     lable.textAlignment = .center
           return lable
     }()
@@ -68,7 +65,6 @@ class FundSectionHeaderView: UIView {
                     let lable = UILabel.init()
                     lable.font = UIFont.systemFont(ofSize: 14)
                      lable.textColor = UIColor("#cd4f39")
-                    lable.text = "5000"
            lable.textAlignment = .right
                     return lable
               }()
@@ -77,7 +73,6 @@ class FundSectionHeaderView: UIView {
              let lable = UILabel.init()
              lable.font = UIFont.systemFont(ofSize: 11)
               lable.textColor = UIColor("#d75d56")
-             lable.text = "宁德时代，宁德时代，宁德时代，宁德时代，宁德时代，宁德时代，宁德时代，宁德时代，宁德时代，"
         lable.numberOfLines = 0
              return lable
        }()
@@ -159,7 +154,11 @@ class FundSectionHeaderView: UIView {
     }
     
     func loadData(_ model: FundSectionModel) {
-        
+        self.fundNameValue.text = model.fundName
+        self.fundNumber.text = model.fundNumber
+        self.totalAmountValue.text = model.totalAmount
+        self.buyDateValue.text = model.date
+        self.stock.text = model.fundStock
     }
     
 }
