@@ -57,20 +57,21 @@
     }];
 }
 
-- (NSMutableArray *)selectDataWithLimit:(NSInteger)limit {
-    NSMutableArray *array = [NSMutableArray array];
+- (NSDictionary *)selectFundWithFundNumber:(NSString *)number {
+    NSMutableDictionary *tempDic = [NSMutableDictionary dictionary];
     [_db inDatabase:^(FMDatabase * _Nonnull db) {
-        FMResultSet *set = [db executeQuery:@"select * from Report limit ?", @(limit)];
+        FMResultSet *set = [db executeQuery:@"select * from Fund where fund_number=123", number];
         while ([set next]) {
-            NSDictionary *dic = @{
-                @"code": [set stringForColumn:@"code"],
-                @"act": [set stringForColumn:@"act"],
-                @"id": @([set intForColumn:@"id"]),
-            };
-            [array addObject:[dic mutableCopy]];
+            [tempDic setObject:[NSString stringWithFormat:@"%i", [set intForColumn:@"fund_number"]] forKey:@"fund_number"];
+            [tempDic setObject:[set stringForColumn:@"fund_name"] forKey:@"fund_name"];
+            NSInteger time =[set intForColumn:@"date"];
+            [tempDic setObject:[Tool formatHH_MM_SS:time] forKey:@"date"];
+            NSString *amount = [NSString stringWithFormat:@"%.2f", [set doubleForColumn:@"total_amount"]];
+            [tempDic setObject:amount forKey:@"total_amount"];
+            [tempDic setObject:[set stringForColumn:@"stock"] forKey:@"stock"];
         }
     }];
-    return array;
+   return [tempDic copy];
 }
 
 - (void)deleteRecordStart:(NSNumber *)start end:(NSNumber *)end {

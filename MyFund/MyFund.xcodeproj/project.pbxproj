@@ -19,6 +19,7 @@
 		CD10BF8024DA781300536B59 /* GLDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CD10BF7F24DA781300536B59 /* GLDataBase.m */; };
 		CD10BF8324DA793E00536B59 /* GLDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD10BF8224DA793E00536B59 /* GLDatabaseManager.m */; };
 		CD10BF8624DA7FE800536B59 /* GLFundDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CD10BF8524DA7FE800536B59 /* GLFundDataBase.m */; };
+		CD10BF8924DAA89D00536B59 /* UIView+ZMToast.m in Sources */ = {isa = PBXBuildFile; fileRef = CD10BF8824DAA89D00536B59 /* UIView+ZMToast.m */; };
 		E6C2F96E3C6F5E406EC2154F /* Pods_MyFund.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC2AEF21CDC616D6B8DA6FB /* Pods_MyFund.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,8 @@
 		CD10BF8224DA793E00536B59 /* GLDatabaseManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLDatabaseManager.m; sourceTree = "<group>"; };
 		CD10BF8424DA7FE800536B59 /* GLFundDataBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLFundDataBase.h; sourceTree = "<group>"; };
 		CD10BF8524DA7FE800536B59 /* GLFundDataBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLFundDataBase.m; sourceTree = "<group>"; };
+		CD10BF8724DAA89D00536B59 /* UIView+ZMToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZMToast.h"; sourceTree = "<group>"; };
+		CD10BF8824DAA89D00536B59 /* UIView+ZMToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZMToast.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +206,8 @@
 				CD10BF8524DA7FE800536B59 /* GLFundDataBase.m */,
 				CD10BF8124DA793E00536B59 /* GLDatabaseManager.h */,
 				CD10BF8224DA793E00536B59 /* GLDatabaseManager.m */,
+				CD10BF8724DAA89D00536B59 /* UIView+ZMToast.h */,
+				CD10BF8824DAA89D00536B59 /* UIView+ZMToast.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -332,6 +337,7 @@
 			files = (
 				CD10BF8324DA793E00536B59 /* GLDatabaseManager.m in Sources */,
 				CD10BF6F24D95FC800536B59 /* AddRecodViewController.swift in Sources */,
+				CD10BF8924DAA89D00536B59 /* UIView+ZMToast.m in Sources */,
 				CD10BF8624DA7FE800536B59 /* GLFundDataBase.m in Sources */,
 				CD10BF7524DA468C00536B59 /* FundSectionHeaderView.swift in Sources */,
 				CD10BF7C24DA606200536B59 /* Tool.m in Sources */,
