@@ -52,7 +52,7 @@
 
 - (void)inserActionRecordsWithInfo:(NSDictionary *)info {
     [_db inDatabase:^(FMDatabase * _Nonnull db) {
-     BOOL success = [db executeUpdate:@"insert into Fund(fund_number, fund_name, total_amount, stock, date) values(?, ?, ?, ?, ?)", info[@"fund_number"], info[@"fund_name"], info[@"total_amount"], info[@"stock"], [Tool currentTimeStr]];
+     BOOL success = [db executeUpdate:@"insert into Fund(fund_number, fund_name, total_amount, stock, date) values(?, ?, ?, ?, ?)", info[@"fund_number"], info[@"fund_name"], info[@"amount"], info[@"stock"], [Tool currentTimeStr]];
         NSLog(@"insert result  ==%d", success);
     }];
 }
@@ -60,7 +60,7 @@
 - (NSDictionary *)selectFundWithFundNumber:(NSString *)number {
     NSMutableDictionary *tempDic = [NSMutableDictionary dictionary];
     [_db inDatabase:^(FMDatabase * _Nonnull db) {
-        FMResultSet *set = [db executeQuery:@"select * from Fund where fund_number=123", number];
+        FMResultSet *set = [db executeQuery:@"select * from Fund where fund_number=?", number];
         while ([set next]) {
             [tempDic setObject:[NSString stringWithFormat:@"%i", [set intForColumn:@"fund_number"]] forKey:@"fund_number"];
             [tempDic setObject:[set stringForColumn:@"fund_name"] forKey:@"fund_name"];

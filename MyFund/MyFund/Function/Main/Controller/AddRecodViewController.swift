@@ -148,13 +148,13 @@ class AddRecodViewController: UIViewController {
     }
     
     @objc func selectFund() {
-        let dic = GLDatabaseManager.share().fundDataBase.selectFund(withFundNumber: self.fundNumberTextFiled?.text ?? "1") as? NSDictionary
-        guard dic == nil else {
-            return
+        let dic: NSDictionary = GLDatabaseManager.share().fundDataBase.selectFund(withFundNumber: self.fundNumberTextFiled?.text ?? "1") as! NSDictionary
+        if dic.count > 0 {
+            self.fundNumberTextFiled?.text = dic["fund_number"] as? String
+            self.fundNameTextFiled?.text = (dic["fund_name"] as! String)
+            self.stockTextFiled?.text = (dic["stock"] as! String)
         }
-        self.fundNumberTextFiled?.text = dic?["fund_number"] as? String
-        self.fundNameTextFiled?.text = (dic?["fund_name"] as! String)
-        self.stockTextFiled?.text = (dic?["stock"] as! String)
+       
        
     }
     
@@ -195,8 +195,9 @@ class AddRecodViewController: UIViewController {
         if dic.count > 0 {
             
         } else {
-            let dic = ["fund_number": (self.fundNumberTextFiled?.text ?? ""), "fund_name": (self.fundNameTextFiled?.text ?? ""), "total_amount": (self.fundAmountTextFiled?.text ?? ""), "stock": (self.stockTextFiled?.text ?? "")]
+            let dic = ["fund_number": (self.fundNumberTextFiled?.text ?? ""), "fund_name": (self.fundNameTextFiled?.text ?? ""), "amount": (self.fundAmountTextFiled?.text ?? ""), "stock": (self.stockTextFiled?.text ?? ""),"is_sell": "0"]
             GLDatabaseManager.share().fundDataBase.inserActionRecords(withInfo: dic)
+            GLDatabaseManager.share().dataBase.inserActionRecords(withInfo: dic)
         }
     }
     

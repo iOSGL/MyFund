@@ -41,7 +41,7 @@
 
 - (void)createReportTable {
     [_db inDatabase:^(FMDatabase * _Nonnull db) {
-        NSString *sql = @"CREATE TABLE IF NOT EXISTS db (id integer PRIMARY KEY NOT NULL,fund_name varchar(128),fund_number INTEGER,buy_date integer(128),amount varchar(128),is_sell BOOLEAN,stock varchar(128));";
+        NSString *sql = @"CREATE TABLE IF NOT EXISTS db (id integer PRIMARY KEY NOT NULL,fund_name varchar(128),fund_number INTEGER, date integer(128),amount varchar(128),is_sell BOOLEAN);";
         BOOL success = [db executeUpdate:sql];
         if (success) {
             
@@ -53,8 +53,8 @@
 
 - (void)inserActionRecordsWithInfo:(NSDictionary *)info {
     [_db inDatabase:^(FMDatabase * _Nonnull db) {
-     BOOL success = [db executeUpdate:@"insert into Report(code, time, act, extension) values(?, ?, ?, ?)", info[@"code"], [Tool currentTimeStr], info[@"act"], info[@"extension"]];
-        NSLog(@"insert result  ==%d", success);
+       BOOL success = [db executeUpdate:@"insert into db(fund_number, fund_name, amount, is_sell, date) values(?, ?, ?, ?, ?)", info[@"fund_number"], info[@"fund_name"], info[@"amount"], info[@"is_sell"], [Tool currentTimeStr]];
+           NSLog(@"insert result  ==%d", success);
     }];
 }
 
