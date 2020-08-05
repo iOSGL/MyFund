@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)currentTimeStr;
 
++ (NSTimeInterval )currentTime;
+
+
 
 @end
 

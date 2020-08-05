@@ -52,7 +52,7 @@
 
 - (void)inserActionRecordsWithInfo:(NSDictionary *)info {
     [_db inDatabase:^(FMDatabase * _Nonnull db) {
-     BOOL success = [db executeUpdate:@"insert into Report(code, time, act, extension) values(?, ?, ?, ?)", info[@"code"], [Tool currentTimeStr], info[@"act"], info[@"extension"]];
+     BOOL success = [db executeUpdate:@"insert into Fund(fund_number, fund_name, total_amount, stock, date) values(?, ?, ?, ?, ?)", info[@"fund_number"], info[@"fund_name"], info[@"total_amount"], info[@"stock"], [Tool currentTimeStr]];
         NSLog(@"insert result  ==%d", success);
     }];
 }

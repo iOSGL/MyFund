@@ -168,6 +168,11 @@ class AddRecodViewController: UIViewController {
             return
         }
         
+        if !((self.fundNumberTextFiled?.text!.count)  != 6) {
+            self.view.gl_showToast("请输入6位数基金编号")
+            return
+        }
+        
         if !((self.fundNameTextFiled?.text!.count)! > 0) {
             self.view.gl_showToast("请输入基金名字")
             return
@@ -183,6 +188,15 @@ class AddRecodViewController: UIViewController {
         if !((self.stockTextFiled?.text!.count)! > 0) {
             self.view.gl_showToast("请输入股票")
             return
+        }
+        
+        
+        let dic: NSDictionary = GLDatabaseManager.share().fundDataBase.selectFund(withFundNumber: self.fundNumberTextFiled?.text ?? "1") as! NSDictionary
+        if dic.count > 0 {
+            
+        } else {
+            let dic = ["fund_number": (self.fundNumberTextFiled?.text ?? ""), "fund_name": (self.fundNameTextFiled?.text ?? ""), "total_amount": (self.fundAmountTextFiled?.text ?? ""), "stock": (self.stockTextFiled?.text ?? "")]
+            GLDatabaseManager.share().fundDataBase.inserActionRecords(withInfo: dic)
         }
     }
     
