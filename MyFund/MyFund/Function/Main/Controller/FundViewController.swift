@@ -24,6 +24,11 @@ class FundViewController: UIViewController {
         table.separatorInset = UIEdgeInsets.init(top: 0, left: 15, bottom: 0, right: 0)
         return table
     }()
+    
+    private lazy var headerView: FundSectionHeaderView = {
+        let view = FundSectionHeaderView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 80))
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,9 +81,8 @@ extension FundViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView.init()
-        view.backgroundColor = UIColor.orange
-        return view
+        
+        return self.headerView
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

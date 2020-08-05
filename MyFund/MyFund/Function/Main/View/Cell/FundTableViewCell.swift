@@ -81,5 +81,18 @@ class FundTableViewCell: UITableViewCell {
                 make.right.equalToSuperview().offset(-15)
         }
     }
+    
+    var model: TransactionList? {
+        didSet {
+            guard let infoModel = model else {
+                return
+            }
+            self.name.text = infoModel.fundName
+            self.numberLab.text = infoModel.fundNumber
+            self.dateLab.text = infoModel.date
+            self.amountLab.text = infoModel.amount
+            self.amountLab.textColor = UIColor(infoModel.amountColor!)
+        }
+    }
 
 }

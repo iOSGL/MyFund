@@ -13,6 +13,8 @@
 		CD10BF6D24D95DE200536B59 /* FundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10BF6C24D95DE200536B59 /* FundViewController.swift */; };
 		CD10BF6F24D95FC800536B59 /* AddRecodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10BF6E24D95FC800536B59 /* AddRecodViewController.swift */; };
 		CD10BF7224D963F900536B59 /* FundTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10BF7124D963F900536B59 /* FundTableViewCell.swift */; };
+		CD10BF7524DA468C00536B59 /* FundSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10BF7424DA468C00536B59 /* FundSectionHeaderView.swift */; };
+		CD10BF7724DA4AAF00536B59 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10BF7624DA4AAF00536B59 /* Model.swift */; };
 		E6C2F96E3C6F5E406EC2154F /* Pods_MyFund.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC2AEF21CDC616D6B8DA6FB /* Pods_MyFund.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +30,8 @@
 		CD10BF6C24D95DE200536B59 /* FundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundViewController.swift; sourceTree = "<group>"; };
 		CD10BF6E24D95FC800536B59 /* AddRecodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecodViewController.swift; sourceTree = "<group>"; };
 		CD10BF7124D963F900536B59 /* FundTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundTableViewCell.swift; sourceTree = "<group>"; };
+		CD10BF7424DA468C00536B59 /* FundSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundSectionHeaderView.swift; sourceTree = "<group>"; };
+		CD10BF7624DA4AAF00536B59 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 		CD10BF6924D95D8600536B59 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CD10BF7624DA4AAF00536B59 /* Model.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 		CD10BF6B24D95D9500536B59 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CD10BF7324DA45DB00536B59 /* CustomView */,
 				CD10BF7024D963D900536B59 /* Cell */,
 			);
 			path = View;
@@ -161,6 +167,14 @@
 				CD10BF7124D963F900536B59 /* FundTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		CD10BF7324DA45DB00536B59 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				CD10BF7424DA468C00536B59 /* FundSectionHeaderView.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 		F7C4D0A05053097BA1013B8D /* Frameworks */ = {
@@ -286,7 +300,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD10BF6F24D95FC800536B59 /* AddRecodViewController.swift in Sources */,
+				CD10BF7524DA468C00536B59 /* FundSectionHeaderView.swift in Sources */,
 				CD10BF6D24D95DE200536B59 /* FundViewController.swift in Sources */,
+				CD10BF7724DA4AAF00536B59 /* Model.swift in Sources */,
 				CD10BF7224D963F900536B59 /* FundTableViewCell.swift in Sources */,
 				CD10BF5024D955FD00536B59 /* AppDelegate.swift in Sources */,
 			);
