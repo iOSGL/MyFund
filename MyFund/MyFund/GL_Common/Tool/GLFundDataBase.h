@@ -25,6 +25,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSDictionary *)selectFundWithFundNumber:(NSString *)number;
 
 /**
+ 更新数据
+ */
+- (void)updateFundWithFundNumber:(NSDictionary *)info;
+
+/**
  删除数据索引 根据数据库主键ID
  */
 - (void)deleteRecordStart:(NSNumber *)start end:(NSNumber *)end;

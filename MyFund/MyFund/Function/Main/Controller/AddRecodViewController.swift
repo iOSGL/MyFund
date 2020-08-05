@@ -148,14 +148,12 @@ class AddRecodViewController: UIViewController {
     }
     
     @objc func selectFund() {
-        let dic: NSDictionary = GLDatabaseManager.share().fundDataBase.selectFund(withFundNumber: self.fundNumberTextFiled?.text ?? "1") as! NSDictionary
+        let dic: NSDictionary = GLDatabaseManager.share().fundDataBase.selectFund(withFundNumber: self.fundNumberTextFiled?.text ?? "1") as NSDictionary
         if dic.count > 0 {
             self.fundNumberTextFiled?.text = dic["fund_number"] as? String
             self.fundNameTextFiled?.text = (dic["fund_name"] as! String)
             self.stockTextFiled?.text = (dic["stock"] as! String)
         }
-       
-       
     }
     
     @objc func sellFund() {
@@ -190,14 +188,16 @@ class AddRecodViewController: UIViewController {
             return
         }
         
-        
-        let dic: NSDictionary = GLDatabaseManager.share().fundDataBase.selectFund(withFundNumber: self.fundNumberTextFiled?.text ?? "1") as! NSDictionary
+        let dic: NSDictionary = GLDatabaseManager.share().fundDataBase.selectFund(withFundNumber: self.fundNumberTextFiled?.text ?? "1") as NSDictionary
+    
+        let tempData = ["fund_number": (self.fundNumberTextFiled?.text ?? ""), "fund_name": (self.fundNameTextFiled?.text ?? ""), "amount": (self.fundAmountTextFiled?.text ?? ""), "stock": (self.stockTextFiled?.text ?? ""),"is_sell": "0"]
+        GLDatabaseManager.share().dataBase.inserActionRecords(withInfo: tempData)
         if dic.count > 0 {
-            
+            let lastAmount = dic["total_amount"]
+            let value = (lastAmount as! NSString).integerValue + (Int(self.fundAmountTextFiled?.text ?? "0") ?? 0 )
+            GLDatabaseManager.share().fundDataBase.updateFund(withFundNumber: ["fund_bumber": (self.fundNumberTextFiled?.text ?? ""), "amount": value])
         } else {
-            let dic = ["fund_number": (self.fundNumberTextFiled?.text ?? ""), "fund_name": (self.fundNameTextFiled?.text ?? ""), "amount": (self.fundAmountTextFiled?.text ?? ""), "stock": (self.stockTextFiled?.text ?? ""),"is_sell": "0"]
-            GLDatabaseManager.share().fundDataBase.inserActionRecords(withInfo: dic)
-            GLDatabaseManager.share().dataBase.inserActionRecords(withInfo: dic)
+             GLDatabaseManager.share().fundDataBase.inserActionRecords(withInfo: tempData)
         }
     }
     

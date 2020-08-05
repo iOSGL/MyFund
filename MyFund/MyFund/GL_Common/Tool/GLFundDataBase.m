@@ -74,6 +74,13 @@
    return [tempDic copy];
 }
 
+- (void)updateFundWithFundNumber:(NSDictionary *)info {
+    [_db inDatabase:^(FMDatabase * _Nonnull db) {
+     BOOL success = [db executeUpdate:@"update Fund set total_amount=? where fund_number=?", info[@"amount"], info[@"fund_bumber"]];
+        NSLog(@"insert result  ==%d", success);
+    }];
+}
+
 - (void)deleteRecordStart:(NSNumber *)start end:(NSNumber *)end {
     [_db inDatabase:^(FMDatabase * _Nonnull db) {
         BOOL success = [db executeUpdate:@"delete from Report where id >= ? and id <= ?", start, end];
