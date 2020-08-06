@@ -84,7 +84,7 @@
              NSString *time =[set stringForColumn:@"date"];
               NSString *amount = [NSString stringWithFormat:@"%.2f", [set doubleForColumn:@"total_amount"]];
              
-             NSString *fundNumber = [NSString stringWithFormat:@"%i", [set intForColumn:@"fund_number"]];
+             NSString *fundNumber = [set stringForColumn:@"fund_number"];
              NSArray *listArray = [[GLDatabaseManager shareManager].dataBase selectDataWithFundNo:fundNumber];
              NSDictionary *dic = @{
                  @"fundNumber": fundNumber,

@@ -71,7 +71,7 @@ class FundTableViewCell: UITableViewCell {
         
         self.contentView.addSubview(dateLab)
             dateLab.snp.makeConstraints { (make) in
-                make.centerY.equalToSuperview()
+                make.centerY.equalTo(numberLab.snp.centerY)
                 make.centerX.equalToSuperview()
         }
         

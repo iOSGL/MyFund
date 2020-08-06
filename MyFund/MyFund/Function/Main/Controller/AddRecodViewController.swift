@@ -172,7 +172,7 @@ class AddRecodViewController: UIViewController {
             return
         }
         
-        if !((self.fundNumberTextFiled?.text!.count)  != 6) {
+        if (self.fundNumberTextFiled?.text!.count)  != 6 {
             self.view.gl_showToast("请输入6位数基金编号")
             return
         }

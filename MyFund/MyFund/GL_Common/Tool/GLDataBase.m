@@ -74,7 +74,7 @@
                 amount = [NSString stringWithFormat:@"+%@", amount];
             }
             NSDictionary *dic = @{
-                @"fundNumber": [NSString stringWithFormat:@"%i", [set intForColumn:@"fund_number"]],
+                @"fundNumber": [set stringForColumn:@"fund_number"],
                 @"fundName": [set stringForColumn:@"fund_name"],
                 @"isSell": @(isSell),
                 @"amount": amount,

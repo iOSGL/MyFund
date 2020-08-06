@@ -62,7 +62,7 @@ class FundViewController: UIViewController {
         flag = !flag!
         model?.openFolder = flag!
         self.dataSource?[view.tag] = model!
-        self.tableView.reloadSections([view.tag], with: .bottom)
+        self.tableView.reloadSections([view.tag], with: .none)
     }
 }
 

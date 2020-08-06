@@ -108,10 +108,10 @@ class FundSectionHeaderView: UIView {
             make.left.equalTo(self.fundName.snp.left)
         }
         
-        self.fundNumber.snp.makeConstraints { (make) in
-            make.centerY.equalTo(self.fundNameValue.snp.centerY)
-            make.left.equalTo(self.fundNameValue.snp.right).offset(5)
-        }
+//        self.fundNumber.snp.makeConstraints { (make) in
+//            make.top.equalTo(self.fundNameValue.snp.bottom).offset(5)
+//            make.left.equalTo(self.fundNameValue.snp.right).offset(5)
+//        }
         
         
         self.buyDate.snp.makeConstraints { (make) in
