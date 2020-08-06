@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  查询数据
  */
-- (NSMutableArray *)selectDataWithLimit:(NSInteger)limit;
+- (NSMutableArray *)selectDataWithFundNo:(NSString *)fundID;
 
 /**
  删除数据索引 根据数据库主键ID

@@ -9,6 +9,7 @@
 #import "GLFundDataBase.h"
 #import <fmdb/FMDatabaseQueue.h>
 #import "Tool.h"
+#import "GLDatabaseManager.h"
 
 #define DB_NAME @"fund.sqlite"
 
@@ -82,13 +83,20 @@
          while ([set next]) {
              NSString *time =[set stringForColumn:@"date"];
               NSString *amount = [NSString stringWithFormat:@"%.2f", [set doubleForColumn:@"total_amount"]];
+             
+             NSString *fundNumber = [NSString stringWithFormat:@"%i", [set intForColumn:@"fund_number"]];
+             NSArray *listArray = [[GLDatabaseManager shareManager].dataBase selectDataWithFundNo:fundNumber];
+             
+             
              NSDictionary *dic = @{
-                 @"fundNumber": [NSString stringWithFormat:@"%i", [set intForColumn:@"fund_number"]],
+                 @"fundNumber": fundNumber,
                  @"fundName": [set stringForColumn:@"fund_name"],
                  @"fundStock": [set stringForColumn:@"stock"],
                  @"totalAmount": amount,
                  @"date": [Tool formatHH_MM_SS:[time integerValue]],
+                 @"transactionList": listArray
              };
+             
              [array addObject:[dic mutableCopy]];
          }
      }];

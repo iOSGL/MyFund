@@ -58,15 +58,28 @@
     }];
 }
 
-- (NSMutableArray *)selectDataWithLimit:(NSInteger)limit {
+- (NSMutableArray *)selectDataWithFundNo:(NSString *)fundID {
     NSMutableArray *array = [NSMutableArray array];
     [_db inDatabase:^(FMDatabase * _Nonnull db) {
-        FMResultSet *set = [db executeQuery:@"select * from Report limit ?", @(limit)];
+        FMResultSet *set = [db executeQuery:@"select * from db where fund_number=?", fundID];
         while ([set next]) {
+            NSString *time =[set stringForColumn:@"date"];
+            BOOL isSell = [set boolForColumn:@"is_sell"];
+            NSString *amount = [set stringForColumn:@"amount"];
+            NSString *color = @"#cd4f39";
+            if (isSell) {
+                color = @"#00cd66";
+                amount = [NSString stringWithFormat:@"-%@", amount];
+            } else {
+                amount = [NSString stringWithFormat:@"+%@", amount];
+            }
             NSDictionary *dic = @{
-                @"code": [set stringForColumn:@"code"],
-                @"act": [set stringForColumn:@"act"],
-                @"id": @([set intForColumn:@"id"]),
+                @"fundNumber": [NSString stringWithFormat:@"%i", [set intForColumn:@"fund_number"]],
+                @"fundName": [set stringForColumn:@"fund_name"],
+                @"isSell": @(isSell),
+                @"amount": amount,
+                @"date": [Tool formatHH_MM_SS:[time integerValue]],
+                @"amountColor": color
             };
             [array addObject:[dic mutableCopy]];
         }

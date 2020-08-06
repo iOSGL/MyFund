@@ -52,7 +52,6 @@ class FundViewController: UIViewController {
         self.tableView.reloadData()
     }
     
-    
     @objc func addFundHistory() {
         let control = AddRecodViewController.init()
         let nav = UINavigationController.init(rootViewController: control)
@@ -73,7 +72,9 @@ extension FundViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let model: FundSectionModel = (self.dataSource?[indexPath.section])!
         let cell: FundTableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FundTableViewCell
+        cell.model = model.transactionList?[indexPath.row]
         return cell
     }
     
