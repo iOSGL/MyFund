@@ -18,6 +18,7 @@ struct FundSectionModel: HandyJSON {
     var profit: Float = 0            // 当前收益
     var date:String?               // 购买时间
     var transactionList: [TransactionList]? // 交易记录
+    var openFolder = false             // 默认关闭分组
     
 }
 

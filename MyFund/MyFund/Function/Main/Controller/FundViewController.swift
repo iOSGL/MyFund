@@ -30,11 +30,8 @@ class FundViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         loadData()
+        NotificationCenter.default.addObserver(self, selector: #selector(loadData), name: NSNotification.Name(rawValue: "reloadData"), object: nil)
     }
     
     @objc func setupUI() {
@@ -46,7 +43,7 @@ class FundViewController: UIViewController {
         }
     }
     
-    func loadData() {
+   @objc func loadData() {
         let array = GLDatabaseManager.share().fundDataBase.selectAllFund()
         self.dataSource =  [FundSectionModel].deserialize(from: array) as? [FundSectionModel]
         self.tableView.reloadData()
@@ -56,6 +53,16 @@ class FundViewController: UIViewController {
         let control = AddRecodViewController.init()
         let nav = UINavigationController.init(rootViewController: control)
         self.present(nav, animated: true, completion: nil)
+    }
+    
+    @objc func folderAction(_ event: UITapGestureRecognizer) {
+        let view: FundSectionHeaderView = event.view as! FundSectionHeaderView
+        var model = self.dataSource?[view.tag]
+        var flag = model?.openFolder
+        flag = !flag!
+        model?.openFolder = flag!
+        self.dataSource?[view.tag] = model!
+        self.tableView.reloadSections([view.tag], with: .bottom)
     }
 }
 
@@ -68,7 +75,12 @@ extension FundViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let model: FundSectionModel = (self.dataSource?[section])!
-        return model.transactionList?.count ?? 0
+        if model.openFolder {
+            return model.transactionList?.count ?? 0
+        } else {
+            return 0
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -81,6 +93,9 @@ extension FundViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let model: FundSectionModel = (self.dataSource?[section])!
         let view = FundSectionHeaderView.init()
+        view.tag = section
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(folderAction(_:)))
+        view.addGestureRecognizer(tap)
         view.loadData(model)
         return view
     }

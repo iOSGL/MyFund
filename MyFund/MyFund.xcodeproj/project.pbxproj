@@ -27,7 +27,7 @@
 		2265B9C3339316D40684A10E /* Pods-MyFund.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFund.debug.xcconfig"; path = "Target Support Files/Pods-MyFund/Pods-MyFund.debug.xcconfig"; sourceTree = "<group>"; };
 		26293C4A3BF7BA5CD15A1F2E /* Pods-MyFund.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFund.release.xcconfig"; path = "Target Support Files/Pods-MyFund/Pods-MyFund.release.xcconfig"; sourceTree = "<group>"; };
 		2CC2AEF21CDC616D6B8DA6FB /* Pods_MyFund.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyFund.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD10BF4C24D955FD00536B59 /* MyFund.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFund.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD10BF4C24D955FD00536B59 /* 基金交易明细.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "基金交易明细.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD10BF4F24D955FD00536B59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD10BF5824D955FE00536B59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD10BF5B24D955FE00536B59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 		CD10BF4D24D955FD00536B59 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CD10BF4C24D955FD00536B59 /* MyFund.app */,
+				CD10BF4C24D955FD00536B59 /* 基金交易明细.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -239,7 +239,7 @@
 			);
 			name = MyFund;
 			productName = MyFund;
-			productReference = CD10BF4C24D955FD00536B59 /* MyFund.app */;
+			productReference = CD10BF4C24D955FD00536B59 /* 基金交易明细.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -492,7 +492,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.LeYuan.Game.XiaoXiaoLe;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "基金交易明细";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyFund//MyFund-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -515,7 +515,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.LeYuan.Game.XiaoXiaoLe;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "基金交易明细";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyFund//MyFund-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -86,8 +86,6 @@
              
              NSString *fundNumber = [NSString stringWithFormat:@"%i", [set intForColumn:@"fund_number"]];
              NSArray *listArray = [[GLDatabaseManager shareManager].dataBase selectDataWithFundNo:fundNumber];
-             
-             
              NSDictionary *dic = @{
                  @"fundNumber": fundNumber,
                  @"fundName": [set stringForColumn:@"fund_name"],

@@ -142,6 +142,7 @@ class AddRecodViewController: UIViewController {
        }
     
     @objc func addComplete() {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadData"), object: nil)
         self.dismiss(animated: true) {
             
         }
@@ -155,6 +156,9 @@ class AddRecodViewController: UIViewController {
             self.stockTextFiled?.text = (dic["stock"] as! String)
         } else {
             self.view.gl_showToast("还未购买此基金")
+            self.fundNameTextFiled?.text = nil
+            self.fundAmountTextFiled?.text = nil
+            self.stockTextFiled?.text = nil
         }
     }
     
@@ -201,6 +205,12 @@ class AddRecodViewController: UIViewController {
         } else {
              GLDatabaseManager.share().fundDataBase.inserActionRecords(withInfo: tempData)
         }
+        
+        self.view.gl_showToast("添加成功")
+        self.fundNumberTextFiled?.text = nil
+        self.fundNameTextFiled?.text = nil
+        self.fundAmountTextFiled?.text = nil
+        self.stockTextFiled?.text = nil
     }
     
 }
