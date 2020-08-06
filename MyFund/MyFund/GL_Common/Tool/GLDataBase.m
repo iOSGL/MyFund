@@ -41,7 +41,7 @@
 
 - (void)createReportTable {
     [_db inDatabase:^(FMDatabase * _Nonnull db) {
-        NSString *sql = @"CREATE TABLE IF NOT EXISTS db (id integer PRIMARY KEY NOT NULL,fund_name varchar(128),fund_number INTEGER, date integer(128),amount varchar(128),is_sell BOOLEAN);";
+        NSString *sql = @"CREATE TABLE IF NOT EXISTS db (id integer PRIMARY KEY NOT NULL,fund_name varchar(128),fund_number varchar(128), date integer(128),amount varchar(128),is_sell BOOLEAN);";
         BOOL success = [db executeUpdate:sql];
         if (success) {
             

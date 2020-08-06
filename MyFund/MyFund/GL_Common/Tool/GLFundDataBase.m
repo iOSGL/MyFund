@@ -41,7 +41,7 @@
 
 - (void)createReportTable {
     [_db inDatabase:^(FMDatabase * _Nonnull db) {
-        NSString *sql = @"CREATE TABLE IF NOT EXISTS Fund (fund_number integer PRIMARY KEY NOT NULL,fund_name char(128),total_amount double(128),date integer(128),stock varchar(128));";
+        NSString *sql = @"CREATE TABLE IF NOT EXISTS Fund (fund_number varchar(128) PRIMARY KEY NOT NULL,fund_name char(128),total_amount double(128),date integer(128),stock varchar(128));";
         BOOL success = [db executeUpdate:sql];
         if (success) {
             
@@ -63,7 +63,7 @@
     [_db inDatabase:^(FMDatabase * _Nonnull db) {
         FMResultSet *set = [db executeQuery:@"select * from Fund where fund_number=?", number];
         while ([set next]) {
-            [tempDic setObject:[NSString stringWithFormat:@"%i", [set intForColumn:@"fund_number"]] forKey:@"fund_number"];
+            [tempDic setObject: [set stringForColumn:@"fund_number"] forKey:@"fund_number"];
             [tempDic setObject:[set stringForColumn:@"fund_name"] forKey:@"fund_name"];
             NSInteger time =[set intForColumn:@"date"];
             [tempDic setObject:[Tool formatHH_MM_SS:time] forKey:@"date"];
